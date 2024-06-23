@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-import { resolve as _resolve } from 'path';
-
+const { resolve: _resolve } = require('path');
 export const entry = "./src/index.jsx";
 export const output = {
   path: _resolve(__dirname, 'dist'),
