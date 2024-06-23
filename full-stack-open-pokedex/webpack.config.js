@@ -1,9 +1,9 @@
+/* eslint-disable no-undef */
 import HtmlWebPackPlugin from "html-webpack-plugin";
 import { resolve as _resolve } from 'path';
 
 export const entry = "./src/index.jsx";
 export const output = {
-  // eslint-disable-next-line no-undef
   path: _resolve(__dirname, 'dist'),
   filename: 'bundle.js',
   publicPath: '/'
