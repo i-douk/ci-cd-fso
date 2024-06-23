@@ -18,3 +18,7 @@ jobs:
      working-directory: full-stack-open-pokedex
    - run: npm run eslint --fix
      working-directory: full-stack-open-pokedex
+   - run: npm run build
+     working-directory: full-stack-open-pokedex
+   - run: npm test
+     working-directory: full-stack-open-pokedex
