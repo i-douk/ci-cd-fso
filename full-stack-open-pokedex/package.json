@@ -65,5 +65,10 @@
     "testPathIgnorePatterns": [
       "e2e-tests"
     ]
-  }
+  },
+  "eslintConfig": {
+  "extends": [
+    "plugin:cypress/recommended"
+  ]
+}
 }
