@@ -11,7 +11,7 @@ export default [
       sourceType: "module",
       globals: {
         ...globals.node,
-        ...globals.browser, // Add browser globals if needed
+        ...globals.browser,
       },
       ecmaVersion: "latest",
     },
@@ -19,9 +19,6 @@ export default [
       '@stylistic/js': stylisticJs,
       'cypress': cypress
     },
-    extends: [
-      'plugin:cypress/recommended'
-    ],
     rules: {
       '@stylistic/js/indent': [
         'error',
@@ -39,6 +36,7 @@ export default [
         'error',
         'never'
       ],
+      ...cypress.configs.recommended.rules
     },
     ignores: [
       "webpack.config.js",
@@ -47,19 +45,19 @@ export default [
     ],
   },
   {
-    files: ["cypress/**/*.js", "cypress/**/*.jsx"], 
+    files: ["cypress/**/*.js", "cypress/**/*.jsx"],
     languageOptions: {
       globals: {
         ...globals.node,
         ...globals.browser,
-        ...globals.cypress, 
+        ...globals.cypress,
       },
     },
     plugins: {
       'cypress': cypress
     },
-    extends: [
-      'plugin:cypress/recommended'
-    ],
+    rules: {
+      ...cypress.configs.recommended.rules
+    },
   }
 ]
