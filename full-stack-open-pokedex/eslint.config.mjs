@@ -19,9 +19,6 @@ export default [
       '@stylistic/js': stylisticJs,
       'cypress': cypress
     },
-    extends: [
-      'plugin:cypress/recommended'
-    ],
     rules: {
       '@stylistic/js/indent': [
         'error',
