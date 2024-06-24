@@ -5,6 +5,9 @@ module.exports = {
     'jest/globals': true,
     'cypress/globals': true
   },
+  'globals': {
+    'cy': true
+  },
   'extends': [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -22,13 +25,6 @@ module.exports = {
     'react', 'jest' , 'cypress'
   ],
   'rules': {
-    'cypress/no-assigning-return-values': 'error',
-    'cypress/no-unnecessary-waiting': 'error',
-    'cypress/assertion-before-screenshot': 'warn',
-    'cypress/no-force': 'warn',
-    'cypress/no-async-tests': 'error',
-    'cypress/no-async-before': 'error',
-    'cypress/no-pause': 'error',
     'indent': [
       'error',
       2

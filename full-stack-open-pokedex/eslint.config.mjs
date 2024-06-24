@@ -37,9 +37,6 @@ export default [
       "webpack.config.js",
       "node_modules/",
       "dist/"
-    ],
-    extends: [
-    "plugin:cypress/recommended"
-  ]
+    ]
   },
 ]
