@@ -19,7 +19,7 @@ module.exports = {
     'allowImportExportEverywhere': true,
   },
   'plugins': [
-    'react', 'jest'
+    'react', 'jest' , 'cypress'
   ],
   'rules': {
     'indent': [
