@@ -22,12 +22,10 @@ jobs:
      working-directory: full-stack-open-pokedex
    - run: npm test
      working-directory: full-stack-open-pokedex
-     run: npm run start-prod
-
-   - name: Wait for application to be ready
-     run: npx wait-on http://localhost:5000
-
-   - name: Run e2e tests
+   
+   - run: npm test
+     working-directory: full-stack-open-pokedex
+   - name: e2e tests
      uses: cypress-io/github-action@v5
      with:
       command: npm run test:e2e
