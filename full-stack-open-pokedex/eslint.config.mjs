@@ -6,12 +6,12 @@ import cypress from 'eslint-plugin-cypress'
 export default [
   js.configs.recommended,
   {
-    files: ["**/*.js"],
+    files: ["**/*.js", "**/*.jsx"],
     languageOptions: {
       sourceType: "module",
       globals: {
         ...globals.node,
-        ...globals.browser, // If you need browser globals as well
+        ...globals.browser, // Add browser globals if needed
       },
       ecmaVersion: "latest",
     },
@@ -19,6 +19,9 @@ export default [
       '@stylistic/js': stylisticJs,
       'cypress': cypress
     },
+    extends: [
+      'plugin:cypress/recommended'
+    ],
     rules: {
       '@stylistic/js/indent': [
         'error',
@@ -43,4 +46,20 @@ export default [
       "dist/"
     ],
   },
+  {
+    files: ["cypress/**/*.js", "cypress/**/*.jsx"], 
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.cypress, 
+      },
+    },
+    plugins: {
+      'cypress': cypress
+    },
+    extends: [
+      'plugin:cypress/recommended'
+    ],
+  }
 ]
