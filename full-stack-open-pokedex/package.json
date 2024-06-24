@@ -8,6 +8,7 @@
     "start-prod": "node app.js",
     "test": "jest",
     "eslint": "eslint './**/*.{js,jsx}' --fix --no-error-on-unmatched-pattern",
+    "eslint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "build": "webpack --mode production",
     "start:test": "NODE_ENV=test node index.js",
     "test:e2e": "cd ./e2e-cypress && npm run cypress:run"
