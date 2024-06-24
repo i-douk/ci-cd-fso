@@ -1,6 +1,8 @@
 import globals from "globals"
 import stylisticJs from '@stylistic/eslint-plugin-js'
 import js from '@eslint/js'
+import cypress from 'eslint-plugin-cypress'
+
 export default [
   js.configs.recommended,
   {
@@ -9,12 +11,17 @@ export default [
       sourceType: "module",
       globals: {
         ...globals.node,
+        ...globals.browser, // If you need browser globals as well
       },
       ecmaVersion: "latest",
     },
     plugins: {
-      '@stylistic/js': stylisticJs
+      '@stylistic/js': stylisticJs,
+      'cypress': cypress
     },
+    extends: [
+      'plugin:cypress/recommended'
+    ],
     rules: {
       '@stylistic/js/indent': [
         'error',
