@@ -38,5 +38,8 @@ export default [
       "node_modules/",
       "dist/"
     ],
+    extends: [
+    "plugin:cypress/recommended"
+  ]
   },
 ]
