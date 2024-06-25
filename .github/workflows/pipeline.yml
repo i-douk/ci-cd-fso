@@ -14,18 +14,13 @@ jobs:
      with:
       node-version: '20'
    - name: Install dependencies
-     run: npm install
-     working-directory: full-stack-open-pokedex
+     run: npm install 
    - run: npm run eslint --fix
-     working-directory: full-stack-open-pokedex
-   - run: npm run build
-     working-directory: full-stack-open-pokedex
+   - run: npm run build 
    - run: npm test
-     working-directory: full-stack-open-pokedex
    - name: e2e tests
      uses: cypress-io/github-action@v5
      with:
-      working-directory: full-stack-open-pokedex
       command: npm run test:e2e
       start: npm run start-prod
       wait-on: http://localhost:5000
