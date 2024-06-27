@@ -35,3 +35,10 @@ jobs:
             wait-on: http://localhost:5000
         - name: Trigger deployment
           run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
+        - name: Bump version and push tag
+          if: ${{ github.ref == 'refs/heads/main' }}
+          uses: anothrNick/github-tag-action@1.64.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            WITH_V : true
+            PATCH_STRING_TOKEN: true
