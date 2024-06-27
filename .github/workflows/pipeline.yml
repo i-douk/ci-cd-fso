@@ -49,7 +49,7 @@ jobs:
           WITH_V : true
           PATCH_STRING_TOKEN: true
           DRY_RUN : true
-          
+
   a_test_job:
     runs-on: ubuntu-20.04
     steps:
